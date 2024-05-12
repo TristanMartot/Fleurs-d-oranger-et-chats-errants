@@ -1,0 +1,266 @@
+// Header menu sticky
+.site-header {
+	position: sticky;
+	top: 0;
+	z-index: 9999;
+	
+	.main-navigation {
+		z-index: 1000;
+		background-color: $color__navigation_bg;
+		display: block;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 80px;
+
+		.div_button {
+			position: absolute;
+			top: 0;
+			height: 80px;
+			width: 100%;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			z-index: 100;
+
+			button {
+				border: 0;
+				background-color: transparent;
+				padding: 10px;
+				display: block;
+				left: 90%;
+				position: absolute;
+				top: 22px;
+				.line {
+					height: 2px;
+					background-color: #000;
+					display: block;
+					margin-bottom: auto;
+					margin-block: 4px;
+					width: 25px;
+				}
+			}	
+			
+			.cross {
+				display: block;
+				left: 90%;
+				position: absolute;
+				top: 25px;
+			}
+			
+		}
+
+		// Conteneur du menu invisible avant un clic sur le bouton
+		#toggle {
+			position: absolute;
+			top: 80px;
+			background-color: #FFF5E9;
+			padding-bottom: 80px;
+			width: 100%;
+			overflow: hidden;
+			&::before{
+				content: "";
+				background-image: url("./assets/images/orchid.png");
+				position: absolute;
+				right: calc(50% + 600px);
+				top: 70px;
+				animation: turn 20s linear infinite;
+				width: 150px;
+				height: 150px;
+				background-size: contain;	
+			}			
+			&::after {
+				content: "";
+				background-image: url("./assets/images/hibiscus_footer.png");
+				position: absolute;
+				left: calc(50% + 490px);
+				top: 440px;
+				animation: turn 20s linear infinite;
+				width: 400px;
+				height: 400px;
+				background-size: contain;	
+			}
+
+
+			// Conteneur du menu
+			.menu_container {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				align-items: center;
+				gap: 10px;
+				width: 100%;
+				height: 100%;	
+				overflow-y: auto;
+				&::before {
+					content: "";
+					background-image: url('./assets/images/flower.png'); 
+					position: absolute;
+					right: calc(50% + 350px);
+					top: 350px;
+					animation: turn 20s linear infinite;
+					width: 60px;
+					height: 60px;
+					background-size: contain;
+				}
+				&::after {
+					content: url("./assets/images/Sunflower.png");
+					position: absolute;
+					left: calc(50% + 250px);
+					top: 100px;
+					animation: turn 20s linear infinite;
+				}
+			}
+
+			img {
+				margin-top: 20px;
+				width: 200px;
+				object-fit: cover;
+			}
+
+			.menu {
+				width: 100%;
+				text-align: center;
+				margin: 0;
+				&::before {
+					content: "";
+					background-image: url("./assets/images/cat2.png");
+					position: absolute;
+					right: calc(50% + 300px);
+					top: 110px;
+					animation: flotting 5s linear infinite;
+					width: 120px;
+					height: 120px;
+					background-size: contain;	
+					background-repeat: no-repeat;
+				}				
+				&::after{
+					content: "";
+					background-image: url('./assets/images/random_flower.png'); 
+					position: absolute;
+					left: calc(50% + 650px);
+					top: 200px;
+					animation: turn 20s linear infinite;
+					width: 80px;
+					height: 80px;
+					background-size: contain;
+					
+				}
+
+				li,
+				ul {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					gap: 20px;
+					list-style: none;
+					padding: 0;
+					font-size: 44px;
+					margin: 0;
+					width: 100%;
+					a {
+						display: inline;
+						text-decoration: none;
+						&:hover {
+						text-shadow: 0px 0px 6px #FF5C00;
+						}
+					}				
+
+					.site-title {
+						display: none;
+					}
+				}
+			}
+
+			.bottom_menu {
+				width: 100%;
+				text-align: center;
+				margin-bottom: 20px;
+				a {
+					display: inline;
+				}
+				&::before {
+					content: "";
+					background-image: url("./assets/images/cat.png");
+					position: absolute;
+					right: calc(50% + 500px);
+					top: 450px;
+					animation: flotting 5s 300ms reverse linear infinite;
+					width: 100px;
+					height: 100px;
+					background-size: contain;	
+					background-repeat: no-repeat;
+
+				}				
+				&::after {
+					content: "";
+					background-image: url("./assets/images/cat1.png");
+					position: absolute;
+					left: calc(50% + 300px);
+					top: 320px;
+					animation: flotting 5s 500ms linear infinite;
+					width: 120px;
+					height: 120px;
+					background-size: contain;	
+					background-repeat: no-repeat;
+				}
+
+			}			
+		
+		}
+
+		a {
+			display: block;
+			text-decoration: none;
+		}
+
+	}
+}
+
+// Autres
+.overflow {
+	overflow: hidden;
+}
+
+.close {
+	display: none !important;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.visible {
+	animation: visible 500ms;
+	animation-fill-mode: forwards;
+	z-index: 0;
+}
+
+
+
+
+// Responsive
+@media screen and (min-width: #{$breakpoint__large_phone}) {
+
+	.menu-toggle {
+		display:block;
+	}
+	.main-navigation {
+		height: 80px;
+		ul {
+			display: flex;
+			margin: 0;
+			padding-left: 0;
+			.site-title {
+				display: block;
+			}
+		}
+	}
+
+}
+

@@ -1,0 +1,617 @@
+@charset "UTF-8";
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+@keyframes turn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes flotting {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-25px, -25px);
+  }
+  40% {
+    transform: translate(-25px, 0px);
+  }
+  60% {
+    transform: translate(25px, 25px);
+  }
+  80% {
+    transform: translate(0px, 25px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+@keyframes fadeInUpAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes AntifadeInAnimation {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeInAnimationBanner {
+  0% {
+    opacity: 0;
+    transform: translateY(300px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes AntifadeInAnimationBanner {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes visible {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+}
+.site-header .main-navigation {
+  z-index: 1000;
+  background-color: #FFD5A2;
+  display: block;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+}
+.site-header .main-navigation .div_button {
+  position: absolute;
+  top: 0;
+  height: 80px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.site-header .main-navigation .div_button button {
+  border: 0;
+  background-color: transparent;
+  padding: 10px;
+  display: block;
+  left: 90%;
+  position: absolute;
+  top: 22px;
+}
+.site-header .main-navigation .div_button button .line {
+  height: 2px;
+  background-color: #000;
+  display: block;
+  margin-bottom: auto;
+  margin-block: 4px;
+  width: 25px;
+}
+.site-header .main-navigation .div_button .cross {
+  display: block;
+  left: 90%;
+  position: absolute;
+  top: 25px;
+}
+.site-header .main-navigation #toggle {
+  position: absolute;
+  top: 80px;
+  background-color: #FFF5E9;
+  padding-bottom: 80px;
+  width: 100%;
+  overflow: hidden;
+}
+.site-header .main-navigation #toggle::before {
+  content: "";
+  background-image: url("./assets/images/orchid.png");
+  position: absolute;
+  right: calc(50% + 600px);
+  top: 70px;
+  animation: turn 20s linear infinite;
+  width: 150px;
+  height: 150px;
+  background-size: contain;
+}
+.site-header .main-navigation #toggle::after {
+  content: "";
+  background-image: url("./assets/images/hibiscus_footer.png");
+  position: absolute;
+  left: calc(50% + 490px);
+  top: 440px;
+  animation: turn 20s linear infinite;
+  width: 400px;
+  height: 400px;
+  background-size: contain;
+}
+.site-header .main-navigation #toggle .menu_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+.site-header .main-navigation #toggle .menu_container::before {
+  content: "";
+  background-image: url("./assets/images/flower.png");
+  position: absolute;
+  right: calc(50% + 350px);
+  top: 350px;
+  animation: turn 20s linear infinite;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+}
+.site-header .main-navigation #toggle .menu_container::after {
+  content: url("./assets/images/Sunflower.png");
+  position: absolute;
+  left: calc(50% + 250px);
+  top: 100px;
+  animation: turn 20s linear infinite;
+}
+.site-header .main-navigation #toggle img {
+  margin-top: 20px;
+  width: 200px;
+  object-fit: cover;
+}
+.site-header .main-navigation #toggle .menu {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+}
+.site-header .main-navigation #toggle .menu::before {
+  content: "";
+  background-image: url("./assets/images/cat2.png");
+  position: absolute;
+  right: calc(50% + 300px);
+  top: 110px;
+  animation: flotting 5s linear infinite;
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.site-header .main-navigation #toggle .menu::after {
+  content: "";
+  background-image: url("./assets/images/random_flower.png");
+  position: absolute;
+  left: calc(50% + 650px);
+  top: 200px;
+  animation: turn 20s linear infinite;
+  width: 80px;
+  height: 80px;
+  background-size: contain;
+}
+.site-header .main-navigation #toggle .menu li,
+.site-header .main-navigation #toggle .menu ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  font-size: 44px;
+  margin: 0;
+  width: 100%;
+}
+.site-header .main-navigation #toggle .menu li a,
+.site-header .main-navigation #toggle .menu ul a {
+  display: inline;
+  text-decoration: none;
+}
+.site-header .main-navigation #toggle .menu li a:hover,
+.site-header .main-navigation #toggle .menu ul a:hover {
+  text-shadow: 0px 0px 6px #FF5C00;
+}
+.site-header .main-navigation #toggle .menu li .site-title,
+.site-header .main-navigation #toggle .menu ul .site-title {
+  display: none;
+}
+.site-header .main-navigation #toggle .bottom_menu {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.site-header .main-navigation #toggle .bottom_menu a {
+  display: inline;
+}
+.site-header .main-navigation #toggle .bottom_menu::before {
+  content: "";
+  background-image: url("./assets/images/cat.png");
+  position: absolute;
+  right: calc(50% + 500px);
+  top: 450px;
+  animation: flotting 5s 300ms reverse linear infinite;
+  width: 100px;
+  height: 100px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.site-header .main-navigation #toggle .bottom_menu::after {
+  content: "";
+  background-image: url("./assets/images/cat1.png");
+  position: absolute;
+  left: calc(50% + 300px);
+  top: 320px;
+  animation: flotting 5s 500ms linear infinite;
+  width: 120px;
+  height: 120px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.site-header .main-navigation a {
+  display: block;
+  text-decoration: none;
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+.close {
+  display: none !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.visible {
+  animation: visible 500ms;
+  animation-fill-mode: forwards;
+  z-index: 0;
+}
+
+@media screen and (min-width: 700px) {
+  .menu-toggle {
+    display: block;
+  }
+  .main-navigation {
+    height: 80px;
+  }
+  .main-navigation ul {
+    display: flex;
+    margin: 0;
+    padding-left: 0;
+  }
+  .main-navigation ul .site-title {
+    display: block;
+  }
+}
+:root {
+  --top: 0px;
+}
+
+.banner {
+  animation: AntifadeInAnimationBanner 1s;
+}
+.banner div {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: inherit;
+}
+.banner div img {
+  animation: fadeInAnimationBanner 1s, flotting 10s 1s linear infinite;
+  position: sticky;
+  top: var(--top);
+  margin-bottom: 25px;
+}
+.banner video {
+  width: 100%;
+  object-fit: cover;
+  min-height: 806px;
+}
+
+.story {
+  background-color: #FFF5E9;
+  scroll-margin-top: 80px;
+}
+.story__article::before {
+  z-index: 0;
+}
+.story__article::after {
+  animation: turn 20s linear infinite;
+  z-index: 1;
+}
+.story h2 .word_1 {
+  animation: fadeInUpAnimation 1s 500ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+.story h2 .apostrophe {
+  animation: fadeInUpAnimation 1s 1000ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+.story h2 .word_2 {
+  animation: fadeInUpAnimation 1s 1500ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+.story h2::before {
+  z-index: 0;
+}
+.story h2::after {
+  animation: turn 20s linear infinite;
+  max-width: 150px;
+  height: 150px;
+  object-fit: cover;
+  transform-origin: center;
+  z-index: 1;
+}
+.story #characters {
+  height: 500px;
+  width: 100%;
+  scroll-margin-top: 100px;
+}
+.story #characters .main-character {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-direction: column;
+  width: 100%;
+}
+.story #characters .main-character h3 {
+  margin: 150px 0 0 80px;
+}
+.story #characters .main-character swiper-container {
+  box-sizing: border-box;
+  max-width: 100%;
+  padding-bottom: 100px;
+  margin-top: -50px;
+}
+.story #characters .main-character swiper-container swiper-slide img {
+  width: 100%;
+  object-fit: contain;
+  height: 100%;
+  margin-left: 150px;
+}
+.story #characters .main-character swiper-container swiper-slide p {
+  display: block;
+  text-align: center;
+  font-size: 20px;
+  font-family: Roboto Mono;
+  margin-top: -40px;
+  animation: none;
+  margin-left: 270px;
+}
+.story #place {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  background-image: url("./assets/images/Studio_Koukaki-image_place.webp");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+  scroll-margin-top: 80px;
+}
+.story #place::before {
+  content: url("./assets/images/little_cloud.webp");
+  filter: blur(10px);
+  position: relative;
+  object-fit: none;
+  top: 150px;
+  left: 800px;
+  transform: translateX(var(--pseudo-element-translate));
+}
+.story #place::after {
+  content: url("./assets/images/big_cloud.webp");
+  filter: blur(10px);
+  position: relative;
+  object-fit: none;
+  top: -400px;
+  left: 1050px;
+  transform: translateX(var(--pseudo-element-translate));
+}
+.story #place p {
+  max-width: 400px;
+  margin-left: 180px;
+}
+.story #place h3 {
+  max-width: 400px;
+  margin-left: 80px;
+}
+
+#studio {
+  scroll-margin-top: 80px;
+}
+#studio h2 .word_1 {
+  animation: fadeInUpAnimation 1s 500ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+#studio h2 .word_2 {
+  animation: fadeInUpAnimation 1s 1000ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+#studio h2::before {
+  animation: turn 20s linear infinite;
+}
+#studio h2::after {
+  animation: turn 20s linear infinite;
+}
+
+#award {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 300px;
+  flex-wrap: wrap;
+  scroll-margin-top: 80px;
+}
+#award img {
+  width: 280px;
+  margin-top: 30px;
+}
+#award p {
+  font-family: Quicksand;
+  font-size: 31px;
+  font-weight: 700;
+  text-align: left;
+  max-width: 660px;
+  margin: 0;
+  background-image: url("assets/images/Rectangle 23.png");
+  background-size: cover;
+  padding: 50px 80px 60px 80px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFF5E9;
+  background-position: center;
+}
+
+.site-footer {
+  flex-direction: column;
+  padding-top: 100px;
+}
+.site-footer ul::after {
+  animation: turn 20s linear infinite;
+}
+.site-footer::before {
+  animation: turn 20s linear infinite;
+}
+.site-footer::after {
+  animation: turn 20s linear infinite;
+}
+
+.fade_in_section {
+  animation: fadeInAnimation 1s;
+}
+
+.anti_fade_in_section {
+  animation: AntifadeInAnimation 1s;
+}
+
+.word_1 {
+  animation: fadeInUpAnimation 1s 500ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+
+.word_2 {
+  animation: fadeInUpAnimation 1s 1000ms;
+  animation-fill-mode: forwards;
+  display: inline-block;
+  opacity: 0;
+}
+
+.invisible {
+  opacity: 0;
+}
+
+@media all and (max-width: 700px) {
+  .banner div img {
+    width: 90%;
+  }
+  .banner video {
+    display: none;
+  }
+  #story #place {
+    align-items: center;
+  }
+  #story #place p {
+    margin-left: 0;
+    max-width: 350px;
+  }
+  #story #place h3 {
+    margin-left: 0;
+    max-width: 350px;
+  }
+  #story #characters {
+    margin-top: 0px;
+  }
+  #story #characters .main-character {
+    align-items: center;
+  }
+  #story #characters .main-character h3 {
+    margin: 0 0 50px 0;
+  }
+  #story #characters .main-character swiper-container {
+    max-width: 200%;
+  }
+  #studio h2 {
+    font-size: 2.8rem;
+  }
+  #award p {
+    font-family: Quicksand;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    max-width: 660px;
+    margin: 0;
+    background-image: url("assets/images/Rectangle 23.png");
+    background-size: cover;
+    padding: 60px 40px 70px 40px;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: #FFF5E9;
+    background-position: center;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

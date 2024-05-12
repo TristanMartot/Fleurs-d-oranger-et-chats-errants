@@ -1,0 +1,116 @@
+// Animation qui fait tourner les fleurs
+@keyframes turn {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// Animation qui fait flotter les têtes de chats et le logo
+@keyframes flotting {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-25px, -25px);
+    }
+
+    40% {
+        transform: translate(-25px, 0px);
+    }
+
+    60% {
+        transform: translate(25px, 25px);
+    }
+
+    80% {
+        transform: translate(0px, 25px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+// Animation pour les titres de sections
+@keyframes fadeInUpAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Animation d'entrée de section
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+        transform: translateY(200px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+// Inverse de l'animation de section fermettant de garder les paragraphes imobiles.
+@keyframes AntifadeInAnimation {
+    0% {
+        transform: translateY(-200px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+// Animation d'entrée du logo 
+@keyframes fadeInAnimationBanner {
+    0% {
+        opacity: 0;
+        transform: translateY(300px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// Animation d'entrée de la banière inverse au logo
+@keyframes AntifadeInAnimationBanner {
+    0% {
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+// Animation d'apparition du menu
+@keyframes visible {
+	0% {
+		transform: translateY(-200px);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+		visibility: visible;
+	}
+}

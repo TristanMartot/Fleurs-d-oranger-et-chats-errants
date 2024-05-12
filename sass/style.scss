@@ -1,0 +1,359 @@
+/*
+ Theme Name:  Fleurs d'orangers et chats errants - Oscars Short
+ Theme URI: https://www.koukaki.local
+ Author: Studio Koukaki
+ Author URI: https://www.koukaki.local
+ Template: foce
+ Description: Thème enfant à l'ocasion de la nomination aux Oscars Shorts
+ Version: 0.1
+ */
+
+// Import variables and mixins.
+@import "../../foce/sass/abstracts/abstracts";
+@import "./components/animation/_keyframes.scss";
+@import "./components/navigation/_navigation.scss";
+
+:root {
+    --top : 0px;
+}
+
+// Style du premier bloc : banière
+.banner {
+    animation: AntifadeInAnimationBanner 1s;
+
+    div {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        min-height: inherit;
+        img {
+        animation: fadeInAnimationBanner 1s, flotting 10s 1s linear infinite;
+        position: sticky;
+        top : (var(--top));
+        margin-bottom: 25px;
+        }
+    }
+
+    video {
+        width: 100%;
+        object-fit: cover;
+        min-height: 806px;
+    }
+}
+
+// Style du deuxieme bloc : Story
+.story {
+    background-color: #FFF5E9;
+    scroll-margin-top: 80px;
+    &__article {
+        &::before {
+            z-index: 0;
+        }
+        &::after {
+            animation: turn 20s linear infinite;
+            z-index: 1;
+        }
+    }
+
+    h2 {
+        .word_1 {
+            animation: fadeInUpAnimation 1s 500ms;
+            animation-fill-mode: forwards;
+            display: inline-block;
+            opacity: 0;
+        }
+
+        .apostrophe {
+            animation: fadeInUpAnimation 1s 1000ms;
+            animation-fill-mode: forwards;
+            display: inline-block;
+            opacity: 0;
+        }
+
+        .word_2 {
+            animation: fadeInUpAnimation 1s 1500ms;
+            animation-fill-mode: forwards;
+            display: inline-block;
+            opacity: 0;
+        }
+
+        &::before {
+            z-index: 0;
+        }
+        &::after {
+            animation: turn 20s linear infinite;
+            max-width: 150px;
+            height: 150px;
+            object-fit: cover;
+            transform-origin: center;
+            z-index: 1;
+        }
+    }
+
+// Style du 3em bloc : Personnages
+    #characters {
+        height: 500px;
+        width: 100%;
+        scroll-margin-top: 100px;
+
+        .main-character {
+            display: flex;
+            justify-content: center;
+            align-items: start;
+            flex-direction: column;
+            width: 100%;
+            h3 {
+                margin: 150px 0 0 80px;
+            }
+
+            swiper-container {
+                box-sizing: border-box;
+                max-width: 100%;
+                padding-bottom: 100px;
+                margin-top: -50px;
+
+                swiper-slide {
+
+                    img {
+                        width: 100%;
+                        object-fit: contain;
+                        height: 100%;
+                        margin-left: 150px;
+                    }
+
+                    p {
+                        display: block;
+                        text-align: center;
+                        font-size: 20px;
+                        font-family: Roboto Mono;
+                        margin-top: -40px;
+                        animation: none;
+                        margin-left: 270px;
+
+                    }
+                }
+            }
+        }
+    }
+
+// Style du 4em bloc : Lieu
+    #place {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        background-image: url("./assets/images/Studio_Koukaki-image_place.webp");
+        width: 100%;
+        min-height: 699px;
+        background-size: cover;
+        scroll-margin-top: 80px;
+
+        &::before {
+            content: url('./assets/images/little_cloud.webp');
+            filter: blur(10px);
+            position: relative;
+            object-fit: none;
+            top: 150px;
+            left: 800px;
+            transform: translateX(var(--pseudo-element-translate));
+        }
+
+        &::after {
+            content: url('./assets/images/big_cloud.webp');
+            filter: blur(10px);
+            position: relative;
+            object-fit: none;
+            top: -400px;
+            left: 1050px;
+            transform: translateX(var(--pseudo-element-translate));
+        }
+
+        p {
+            max-width: 400px;
+            margin-left: 180px;
+        }
+
+        h3 {
+            max-width: 400px;
+            margin-left: 80px;
+        }
+    }
+}
+
+// Style du 5em bloc : Studio
+#studio {
+    scroll-margin-top: 80px;
+
+    h2 {
+        .word_1 {
+            animation: fadeInUpAnimation 1s 500ms;
+            animation-fill-mode: forwards;
+            display: inline-block;
+            opacity: 0;
+        }
+
+        .word_2 {
+            animation: fadeInUpAnimation 1s 1000ms;
+            animation-fill-mode: forwards;
+            display: inline-block;
+            opacity: 0;
+        }
+
+        &::before {
+            animation: turn 20s linear infinite;
+        }
+
+        &::after {
+            animation: turn 20s linear infinite;
+        }
+    }
+}
+
+// Style du 6em bloc (temporaire) : Award
+#award {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 300px;
+    flex-wrap: wrap;
+    scroll-margin-top: 80px;
+
+    img {
+        width: 280px;
+        margin-top: 30px;
+    }
+
+    p {
+        font-family: Quicksand;
+        font-size: 31px;
+        font-weight: 700;
+        text-align: left;
+        max-width: 660px;
+        margin: 0;
+        background-image: url("assets/images/Rectangle 23.png");
+        background-size: cover;
+        padding: 50px 80px 60px 80px;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: #FFF5E9;
+        background-position: center;
+    }
+}
+
+// Style du Footer 
+.site-footer {
+    flex-direction: column;
+    padding-top: 100px;
+
+    ul {
+        &::after {
+            animation: turn 20s linear infinite;
+        }
+    }
+
+    &::before {
+        animation: turn 20s linear infinite;
+    }
+
+    &::after {
+        animation: turn 20s linear infinite;
+    }
+
+}
+
+// Autres
+.fade_in_section {
+    animation: fadeInAnimation 1s;
+}
+
+.anti_fade_in_section {
+    animation: AntifadeInAnimation 1s;
+}
+.word_1 {
+    animation: fadeInUpAnimation 1s 500ms;
+    animation-fill-mode: forwards;
+    display: inline-block;
+    opacity: 0;
+}
+.word_2 {
+    animation: fadeInUpAnimation 1s 1000ms;
+    animation-fill-mode: forwards;
+    display: inline-block;
+    opacity: 0;
+}
+.invisible {
+    opacity: 0;
+}
+
+
+// Responsive
+@media all and (max-width: #{$breakpoint__large_phone}) {
+    .banner {
+        div {
+            img {
+                width: 90%;
+            }
+        }
+        video {
+            display: none;
+        }
+    }
+
+    #story {
+        #place {
+            align-items: center;
+
+            p {
+                margin-left: 0;
+                max-width: 350px;
+            }
+
+            h3 {
+                margin-left: 0;
+                max-width: 350px;
+            }
+        }
+
+        #characters {
+            margin-top: 0px;
+
+            .main-character {
+                align-items: center;
+
+                h3 {
+                    margin: 0 0 50px 0;
+                }
+
+                swiper-container {
+                    max-width: 200%;
+                }
+            }
+        }
+    }
+
+    #studio {
+        h2 {
+            font-size: 2.8rem;
+        }
+    }
+
+    #award {
+        p {
+            font-family: Quicksand;
+            font-size: 28px;
+            font-weight: 700;
+            text-align: center;
+            max-width: 660px;
+            margin: 0;
+            background-image: url("assets/images/Rectangle 23.png");
+            background-size: cover;
+            padding: 60px 40px 70px 40px;
+            text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            color: #FFF5E9;
+            background-position: center;
+        }
+    }
+
+}
